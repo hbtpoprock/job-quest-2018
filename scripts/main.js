@@ -58,11 +58,9 @@ $(document).ready(function () {
     function getJokes(obj) {
         let jokes = "";
 
-        for (i = 0; i < obj.value.length; i++) {
-            let joke = obj.value[i].joke;
-
-            jokes += '<li class="joke">' + joke + "</li>";
-        }
+        jokes = obj.value.reduce(function (acc, curr) {
+            return acc + '<li class="joke">' + curr.joke + "</li>";
+        }, '');
 
         return jokes;
     }
