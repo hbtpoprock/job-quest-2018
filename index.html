@@ -12,14 +12,29 @@
 </head>
 
 <body>
-    <div id="json-obj">
-        <p class="content">json obj shows here</p>
+    <div class="user-interact">
+        <div class="main-interact-field">
+            <label>Number of Jokes: </label>
+            <input class="number-input-box" type="number" min="1" step="1" required autofocus>
+            <button id="get-joke-btn">Get Jokes</button>
+        </div>
+
+        <div class="optional">
+            <span>If you don't like Chuck Norris, you can change it. (Optional)</span>
+
+            <div class="name-input-field">
+                <label>Name:</label>
+                <input id="firstName" class="text-input-box" type="text" placeholder="First Name">
+                <input id="lastName" class="text-input-box" type="text" placeholder="Last Name">
+            </div>
+        </div>
+        <h1>Get Your Jokes</h1>
     </div>
 
-    <div class="user-interact">
-        <label>Number of Jokes: </label>
-        <input class="input-box" type="number">
-        <button id="get-joke-btn">get joke</button>
+    <div class="result-field">
+        <ol id="json-obj">
+            <span class="temp">Jokes Show Here.</span>
+        </ol>
     </div>
 </body>
 

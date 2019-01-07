@@ -1,58 +1,187 @@
 body {
-    background-color: gray;
-}
-
-#json-obj {
-    text-align: center;
-    width: 75%;
-    margin: 20px auto;
-    margin-top: 50px;
-    padding: 10px;
-    font-size: 2em;
-    background-color: darkolivegreen;
-}
-
-.content {
-    /* padding: 10px; */
+    background-color: #FCEFE7;
+    color: #444343;
+    font-size: 1em;
+    margin: 0;
 }
 
 .user-interact {
+    position: fixed;
+    z-index: 1;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
+    background-color: #FCEFE7;
 }
 
-.input-box {
-    width: 3em;
-    margin: 0.5em;
-    padding: 5px 0;
-    padding-left: 0.5em;
+.main-interact-field {
+    width: 75%;
+    margin: 1em auto;
+    margin-bottom: 0.75em;
+    font-size: 2em;
+    text-align: center;
+}
+
+.number-input-box {
+    width: 2.5em;
+    padding-left: 0.25em;
     padding-right: 0.1em;
     font-size: 1em;
 }
 
-#get-joke-btn {
+.optional {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 1.145em;
     text-align: center;
+    font-size: 1.75em;
+}
+
+.name-input-field {
+    margin-top: 0.775em;
+    font-size: 0.75em;
+}
+
+.text-input-box {
+    width: 6em;
+    padding-left: 0.25em;
+    padding-right: 0.1em;
     font-size: 1em;
-    padding: 5px 20px;
+}
+
+h1 {
+    margin: 0 auto;
+    text-align: center;
+    width: 75%;
+    padding: 0.15em 0;
+    background-color: #fad291;
+    box-shadow: 0 1px 1px -1px #444343;
+}
+
+.result-field {
+    position: relative;
+    top: 16.25em;
+    margin: 2em auto;
+    margin-top: 0;
+    text-align: center;
+    width: 75%;
+}
+
+.temp {
+    text-align: center;
+    display: block;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+#json-obj {
+    margin: 0;
+    padding: 0.5em;
+    font-size: 2em;
+    background-color: #B1E1E2;
+}
+
+.joke {
+    text-align: left;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+}
+
+#get-joke-btn {
+    font-size: 1em;
+    padding: 0.15em 0.75em;
+    margin-left: 0.5em;
     border: none;
-    background-color: white;
+    background-color: #fcb5c2;
+    color: #444343;
     border-radius: 99999999px;
 }
 
-#get-joke-btn:hover, #get-joke-btn:focus, #get-joke-btn:active {
-    cursor: pointer;
+#get-joke-btn:focus {
+    box-shadow: 0 0 2px 1px #444343;
     outline: none;
-    background-color: black;
-    color: white;
 }
 
-#get-joke-btn:focus {
-    box-shadow: 0 0 3px 2px blue;
+#get-joke-btn:hover {
+    cursor: pointer;
+    outline: none;
+    background-color: #eeacb8;
+    box-shadow: 0 0 2px 1px #444343;
 }
 
 #get-joke-btn:active {
-    background-color: white;
+    background-color: #e0a1ad;
+    outline: none;
+    box-shadow: none;
+}
+
+.loader {
+    display: none;
+    font-size: 1.5em;
+    margin: 0.225em auto;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: #ffffff;
+    background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.loader:before {
+    width: 50%;
+    height: 50%;
+    background: #ffffff;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+}
+
+.loader:after {
+    background: #B1E1E2;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@-webkit-keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
