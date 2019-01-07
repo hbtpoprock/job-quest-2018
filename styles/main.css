@@ -1,0 +1,58 @@
+body {
+    background-color: gray;
+}
+
+#json-obj {
+    text-align: center;
+    width: 75%;
+    margin: 20px auto;
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 2em;
+    background-color: darkolivegreen;
+}
+
+.content {
+    /* padding: 10px; */
+}
+
+.user-interact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.input-box {
+    width: 3em;
+    margin: 0.5em;
+    padding: 5px 0;
+    padding-left: 0.5em;
+    padding-right: 0.1em;
+    font-size: 1em;
+}
+
+#get-joke-btn {
+    text-align: center;
+    font-size: 1em;
+    padding: 5px 20px;
+    border: none;
+    background-color: white;
+    border-radius: 99999999px;
+}
+
+#get-joke-btn:hover, #get-joke-btn:focus, #get-joke-btn:active {
+    cursor: pointer;
+    outline: none;
+    background-color: black;
+    color: white;
+}
+
+#get-joke-btn:focus {
+    box-shadow: 0 0 3px 2px blue;
+}
+
+#get-joke-btn:active {
+    background-color: white;
+}
