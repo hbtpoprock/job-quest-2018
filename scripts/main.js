@@ -32,9 +32,6 @@ $(document).ready(function () {
         if (str) {
             num = parseInt(str);
         }
-        console.log('$(".number-input-box").val(): ' + $(".number-input-box").val());
-        console.log('Boolean($(".number-input-box").val()): ' + Boolean($(".number-input-box").val()));
-        console.log("num: " + num);
 
         return num;
     }
@@ -54,7 +51,6 @@ $(document).ready(function () {
         } else {
             url += num;
         }
-        console.log("url: " + url);
 
         return url;
     }
@@ -66,11 +62,7 @@ $(document).ready(function () {
             let joke = obj.value[i].joke;
 
             jokes += '<li class="joke">' + joke + "</li>";
-
-            console.log("i: " + i);
-            console.log("joke[id: " + obj.value[i].id + "]: " + '"' + joke + '"');
         }
-        console.log('jokes: ' + jokes);
 
         return jokes;
     }
@@ -83,24 +75,16 @@ $(document).ready(function () {
         let req = new XMLHttpRequest();
 
         req.open("GET", url, true);
-        if (str) {
-            console.log('$(".number-input-box").val() is not empty string');
-            if (intNum > 0 && intNum == str) {
-                console.log('and parseInt($(".number-input-box").val()) is greater than 0 && $(".number-input-box").val() is integer');
-                console.log('req.status before load: ' + req.status);
 
+        if (str) {
+            if (intNum > 0 && intNum == str) {
                 req.send();
 
                 showLoader();
             } else {
-                console.log('but parseInt($(".number-input-box").val()) is less than equal to 0 || $(".number-input-box").val() is not integer');
-
                 showNumErrMsg();
             }
         } else {
-            console.log('$(".number-input-box").val() is empty string or the input value is not number');
-            console.log('req.status before load: ' + req.status);
-
             req.send();
 
             showLoader();
@@ -108,19 +92,12 @@ $(document).ready(function () {
 
         req.onreadystatechange = function () {
             if (req.readyState === 4) {
-                console.log('req.status after req sent: ' + req.status);
                 if (req.status === 200) {
                     let json = JSON.parse(req.responseText);
                     let jokes = getJokes(json);
 
-                    console.log("json: " + json);
-                    console.log("JSON.stringify(json): " + JSON.stringify(json));
-
                     showJokes(jokes);
                 } else {
-                    console.log('req.status after req sent: ' + req.status);
-                    console.log('req.statusText: ' + req.statusText);
-
                     showReqErrMsg();
                 }
             }
